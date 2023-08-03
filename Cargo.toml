@@ -1,5 +1,5 @@
 [package]
-name = "pp_mazes"
+name = "mazesfp"
 version = "0.1.0"
 edition = "2021"
 

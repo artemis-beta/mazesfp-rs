@@ -1,5 +1,5 @@
-use pp_mazes::binary_tree;
-use pp_mazes::grid;
+use mazesfp::binary_tree;
+use mazesfp::grid;
 
 fn main() {
     let mut grid = grid::build_grid(10, 10);
