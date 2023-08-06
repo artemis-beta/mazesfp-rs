@@ -27,3 +27,30 @@ Run the example with:
 ```sh
 cargo run --example sidewinder
 ```
+
+### Aldous-Broder
+
+In the Aldous-Broder algorithm developed by David Aldous and Andrei Broder is a random walk algorithm. A cell is chosen at random and a neighbour then selected also at random, if the neighbour has not yet been visited a path is cut between them.
+
+Run the example with:
+```sh
+cargo run --example aldous_broder
+```
+
+### Wilson
+
+Wilson's algoritm developed by David Bruce Wilson consists of firstly randomly setting a cell as visited, then randomly selecting another cell as a start cell. A random walk is performed until a visited cell is reached, if a path leads to a loop this loop is erased and the process continues from the point prior to it.
+
+Run the example with:
+```sh
+cargo run --example wilson
+```
+
+### Hunt and Kill
+
+With the Hunt and Kill algorithm a random walk is performed, however unlike Aldous-Broder cells cannot be re-visited, a pathway can only be made through unvisited cells. A random walk is performed until a loop occurs, when this happens starting from the top of the maze the first cell unvisited cell with at least one visited neighbour is set as the new continuation point (after a path is cut between itself and the visited cell).
+
+Run the example with:
+```sh
+cargo run --example hunt_and_kill
+```
