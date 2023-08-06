@@ -4,7 +4,7 @@
 
 This repository contains code following the outline algorithms in _Mazes for Programmers_ by Jamis Buck, which can be found [here](http://www.mazesforprogrammers.com/).
 
-_mazegen_ is a library containing maze construction algorithms which can be applied to a grid struct.
+_mazesfp_ is a library containing maze construction algorithms which can be applied to a grid struct.
 
 ## Algorithms
 
