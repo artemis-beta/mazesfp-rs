@@ -1,0 +1,26 @@
+name: Mazes for Programmers
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install stable toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Run Examples
+      run: |
+      examples=$(for i in $(ls examples/); do echo $(echo "$i" | cut -d '/' -f 2 | cut -d '.' -f 1 | xargs); done)
+      for example in $examples; do cargo run --example $example; done  
