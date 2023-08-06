@@ -1,7 +1,7 @@
 use rand::{Rng, distributions::{Distribution, Standard}};
 use crate::grid::Grid;
 
-#[derive(PartialEq,Debug)]
+#[derive(PartialEq,Debug,Clone)]
 pub enum Direction {
     North,
     South,
@@ -20,9 +20,22 @@ impl Distribution<Direction> for Standard {
     }
 }
 
-pub fn route(grid: &Grid, current_cell: &Vec<usize>) -> Direction {
+pub fn get_reverse(direction: &Direction) -> Direction {
+    match direction {
+        Direction::East => Direction::West,
+        Direction::North => Direction::South,
+        Direction::South => Direction::North,
+        _ => Direction::East
+    }
+}
+
+pub fn route(grid: &Grid, current_cell: &Vec<usize>, previous: &mut Direction) {
     loop {
         let direction: Direction = rand::random();
+
+        if direction == get_reverse(previous) {
+            continue;
+        }
 
         if current_cell[0] == 0 && direction == Direction::West {
             continue;
@@ -37,7 +50,8 @@ pub fn route(grid: &Grid, current_cell: &Vec<usize>) -> Direction {
             continue;
         }
 
-        return direction;
+        *previous = direction.clone();
+        break;
     }
 }
 
