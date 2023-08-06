@@ -3,25 +3,15 @@ use std::fmt::Display;
 #[derive(Clone)]
 pub struct Cell {
     south: bool,
-    east: bool,
-    east_wall: char,
-    south_wall: char
+    east: bool
 }
 
 impl Default for Cell {
     fn default() -> Self {
         Cell {
             south: false,
-            east: false,
-            east_wall: '|',
-            south_wall: '_'
+            east: false
         }
-    }
-}
-
-impl Display for Cell {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{}{}", if !self.south {self.south_wall} else {' '}, if !self.east {self.east_wall} else {' '})
     }
 }
 
@@ -37,6 +27,12 @@ impl Grid {
         self.cells.len()
     }
     pub fn erase_wall(&mut self, x: usize, y: usize, south: bool) {
+        if x >= self.width() {
+            panic!("Invalid index {} for grid of width {}", x, self.width());
+        }
+        if y >= self.height() {
+            panic!("Invalid index {} for grid of height {}", y, self.height());
+        }
         if south {
             self.cells[y][x].south = true;
         } else {
@@ -47,19 +43,28 @@ impl Grid {
 
 impl Display for Grid {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut out_str: String = " ".to_owned();
-        for _ in self.cells.iter() {
-            out_str += "_ ";
-        }
-        out_str += "\n";
+        let mut out_str: String = "".to_string();
+        out_str += format!(
+            "{}{}{}", "+", "———+".repeat(self.width()),
+            "\n"
+        ).as_str();
+
         for row in self.cells.iter() {
             out_str += "|";
-            for cell in row {
-                out_str += format!("{}", cell).as_str();
+            for cell in row.iter() {
+                out_str += "   ";
+                out_str += if cell.east {" "} else {"|"}; 
             }
             out_str += "\n";
+            for cell in row.iter() {
+                out_str += "+";
+                out_str += if cell.south {"   "} else {"———"}; 
+            }
+            out_str += "+\n";
         }
+
         write!(f, "{}", out_str)
+
     }
 }
 
