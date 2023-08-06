@@ -22,5 +22,5 @@ jobs:
 
     - name: Run Examples
       run: |
-      examples=$(for i in $(ls examples/); do echo $(echo "$i" | cut -d '/' -f 2 | cut -d '.' -f 1 | xargs); done)
-      for example in $examples; do cargo run --example $example; done  
+        examples=$(for i in $(ls examples/); do echo $(echo "$i" | cut -d '/' -f 2 | cut -d '.' -f 1 | xargs); done)
+        for example in $examples; do cargo run --example $example; done  
