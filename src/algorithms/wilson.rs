@@ -1,6 +1,6 @@
 use rand::prelude::SliceRandom;
 use crate::grid::Grid;
-use crate::direction::{next_cell, route, self};
+use crate::direction::{next_cell, route, Direction};
 
 pub fn cut_path(grid: &mut Grid, path: &Vec<Vec<usize>>, unvisited: &mut Vec<Vec<usize>>) {
     for i in 0..path.len() - 1 {
@@ -40,7 +40,7 @@ pub fn algorithm(grid: &mut Grid) -> () {
         _ => panic!("Failed to generate random cell")
     };
 
-    let mut direction = direction::Direction::East;
+    let mut direction = Direction::East;
 
     current_path.push(start_cell.clone());
 
