@@ -1,17 +1,17 @@
 #[path="grid.rs"]
 pub mod grid;
 
-#[path="binary_tree.rs"]
+#[path="algorithms/binary_tree.rs"]
 pub mod binary_tree;
 
-#[path="sidewinder.rs"]
+#[path="algorithms/sidewinder.rs"]
 pub mod sidewinder;
 
-#[path="aldous_broder.rs"]
+#[path="algorithms/aldous_broder.rs"]
 pub mod aldous_broder;
 
 #[path="direction.rs"]
 pub mod direction;
 
-#[path="wilson.rs"]
+#[path="algorithms/wilson.rs"]
 pub mod wilson;
