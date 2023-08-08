@@ -18,3 +18,6 @@ pub mod wilson;
 
 #[path="algorithms/hunt_and_kill.rs"]
 pub mod hunt_and_kill;
+
+#[path="algorithms/recursive_backtracker.rs"]
+pub mod recursive_backtracker;

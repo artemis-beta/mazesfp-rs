@@ -1,0 +1,212 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'mazesfp'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=mazesfp"
+                ],
+                "filter": {
+                    "name": "mazesfp",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'aldous_broder'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=aldous_broder",
+                    "--package=mazesfp"
+                ],
+                "filter": {
+                    "name": "aldous_broder",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'aldous_broder'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=aldous_broder",
+                    "--package=mazesfp"
+                ],
+                "filter": {
+                    "name": "aldous_broder",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'binary_tree'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=binary_tree",
+                    "--package=mazesfp"
+                ],
+                "filter": {
+                    "name": "binary_tree",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'binary_tree'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=binary_tree",
+                    "--package=mazesfp"
+                ],
+                "filter": {
+                    "name": "binary_tree",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'hunt_and_kill'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=hunt_and_kill",
+                    "--package=mazesfp"
+                ],
+                "filter": {
+                    "name": "hunt_and_kill",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'hunt_and_kill'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=hunt_and_kill",
+                    "--package=mazesfp"
+                ],
+                "filter": {
+                    "name": "hunt_and_kill",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'sidewinder'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=sidewinder",
+                    "--package=mazesfp"
+                ],
+                "filter": {
+                    "name": "sidewinder",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'sidewinder'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=sidewinder",
+                    "--package=mazesfp"
+                ],
+                "filter": {
+                    "name": "sidewinder",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'wilson'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=wilson",
+                    "--package=mazesfp"
+                ],
+                "filter": {
+                    "name": "wilson",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'wilson'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=wilson",
+                    "--package=mazesfp"
+                ],
+                "filter": {
+                    "name": "wilson",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

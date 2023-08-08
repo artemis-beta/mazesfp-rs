@@ -54,3 +54,12 @@ Run the example with:
 ```sh
 cargo run --example hunt_and_kill
 ```
+
+### Reverse Backtracker
+
+The reverse backtracker algorithm is similar to Hunt and Kill in terms of initial motion, however rather than finding the first unvisited cell starting from the top row instead we backtrack along the current path to the first cell which has a neighbour which has not been visited and head that direction.
+
+Run the example with:
+```sh
+cargo run --example reverse_backtracker
+```
